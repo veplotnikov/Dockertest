@@ -1,7 +1,7 @@
 FROM ubuntu:20.04
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && apt install wget default-jdk  maven git -y
-RUN mkdir /opt/boxfuse
+RUN mkdir /opt/boxfuse && mkdir /opt/tomcat
 RUN wget https://www-eu.apache.org/dist/tomcat/tomcat-9/v9.0.46/bin/apache-tomcat-9.0.46.tar.gz -P /tmp
 RUN tar -xf /tmp/apache-tomcat-9.0.46.tar.gz -C /opt/tomcat/
 RUN chown -R tomcat: /opt/tomcat
